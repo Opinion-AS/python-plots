@@ -1,0 +1,33 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+### primary colors
+## Orange, warm black
+primary_colors = ["#f26649", "#302026"]
+
+### secondary colors
+## Dk. grey, red, yellow, blue, aqua, lt. yellow
+secondary_colors = ["#525350", "#f15f5b", "#fce164", "#1c7ca1", "#71c3b4", "#fcf7ba"]
+
+title_font = {"fontname": "Century Gothic"}
+text_font = {"fontname": "Arial"}
+
+def valuelabel_h(barheights, barlabels):
+    """Add valuelabels for horizontal barplots"""
+    for i in range(len(barheights)):
+        plt.text(barheights[i]+0.3, i-0.06, barlabels[i], ha = 'left', size = 8, **text_font)
+        
+def valuelabel_v(barheights, barlabels):
+    """Add valuelabels for horizontal barplots"""
+    for i in range(len(barheights)):
+        plt.text(i-0.06, barheights[i]+0.3, barlabels[i], ha = 'center', size = 8, **text_font)
+
+def make_barplot_h(barheights, barnames, barcolors):
+    """Make horizontal barplot"""
+    fig, ax = plt.subplots()
+    ax.barh(barnames, barheights, 0.65, color = barcolors, label = barlabels)
+    valuelabel_h(barheights, barlabels)
+    plt.yticks(**text_font, size = 8)
+    plt.box(False)
+    plt.xticks([])
+    plt.tick_params(left=False)
