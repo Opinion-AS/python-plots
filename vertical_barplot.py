@@ -13,12 +13,12 @@ title_font = {"fontname": "Century Gothic"}
 text_font = {"fontname": "Arial"}
 
 def valuelabel_v(barheights, barlabels):
-    """Add valuelabels for horizontal barplots"""
+    """Add valuelabels for vertical barplots"""
     for i in range(len(barheights)):
         plt.text(i-0.03, barheights[i]+0.3, barlabels[i], ha = 'center', size = 8, **text_font)
 
 def make_barplot_v(barheights, barnames, barcolors):
-    """Make horizontal barplot"""
+    """Make vertical barplot"""
     fig, ax = plt.subplots()
     ax.bar(barnames, barheights, 0.65, color = barcolors, label = barlabels)
     valuelabel_v(barheights, barlabels)
@@ -27,4 +27,3 @@ def make_barplot_v(barheights, barnames, barcolors):
     plt.yticks([])
     plt.tick_params(bottom=False)
 
-make_barplot_v(barheights, barnames, secondary_colors[4])
