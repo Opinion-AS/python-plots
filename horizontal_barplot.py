@@ -16,11 +16,7 @@ def valuelabel_h(barheights, barlabels):
     """Add valuelabels for horizontal barplots"""
     for i in range(len(barheights)):
         plt.text(barheights[i]+0.3, i-0.06, barlabels[i], ha = 'left', size = 8, **text_font)
-        
-def valuelabel_v(barheights, barlabels):
-    """Add valuelabels for horizontal barplots"""
-    for i in range(len(barheights)):
-        plt.text(i-0.06, barheights[i]+0.3, barlabels[i], ha = 'center', size = 8, **text_font)
+
 
 def make_barplot_h(barheights, barnames, barcolors):
     """Make horizontal barplot"""
