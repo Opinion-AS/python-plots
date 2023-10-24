@@ -15,13 +15,12 @@ text_font = {"fontname": "Arial"}
 def valuelabel_h(barheights, barlabels):
     """Add valuelabels for horizontal barplots"""
     for i in range(len(barheights)):
-        plt.text(barheights[i]+0.3, i-0.06, barlabels[i], ha = 'left', size = 8, **text_font)
+        plt.text(list(barheights)[i]+0.3, i-0.06, list(barheights)[i], ha = 'left', size = 8, **text_font)
 
-
-def make_barplot_h(barheights, barnames, barcolors):
+def make_barplot_h(barheights, barlabels, barcolors):
     """Make horizontal barplot"""
     fig, ax = plt.subplots()
-    ax.barh(barnames, barheights, 0.65, color = barcolors, label = barlabels)
+    ax.barh(list(barlabels), list(barheights), 0.65, color = barcolors, label = barlabels)
     valuelabel_h(barheights, barlabels)
     plt.yticks(**text_font, size = 8)
     plt.box(False)
