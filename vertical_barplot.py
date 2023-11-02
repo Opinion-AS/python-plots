@@ -17,7 +17,7 @@ def valuelabel_v(barheights, barlabels):
     for i in range(len(barheights)):
         plt.text(i-0.03, list(barheights)[i]+0.3, list(barlabels)[i], ha = 'center', size = 8, **text_font)
 
-def make_barplot_v(barheights, barlabels, barcolors):
+def make_barplot_v(barheights, barlabels, barcolors, save_path, chart_title):
     """Make vertical barplot"""
     fig, ax = plt.subplots()
     ax.bar(list(barlabels), list(barheights), 0.65, color = barcolors, label = barlabels)
@@ -26,3 +26,4 @@ def make_barplot_v(barheights, barlabels, barcolors):
     plt.box(False)
     plt.yticks([])
     plt.tick_params(bottom=False)
+    plt.savefig(f"{save_path}/{chart_title}.svg")
