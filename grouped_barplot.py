@@ -18,7 +18,7 @@ def make_grouped_barplot(barlists, barlabels, save_path, chart_title):
     width = (1 / len(barlists) / 1.6)
     for i, subbar in enumerate(barlists):
         x_coords = [j + i*width - width*2 for j in range(len(subbar))]
-        ax.bar(x_coords, subbar, width, color = secondary_colors[i], label = barlabels[i])
+        ax.bar(x_coords, subbar, width, color = secondary_colors[i])
     barx = list(range(len(subbar)))
     plt.yticks(**text_font, size = 8)
     plt.xticks(barx, barlabels, **text_font, size = 8, rotation = 90)
