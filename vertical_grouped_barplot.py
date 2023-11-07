@@ -12,8 +12,8 @@ secondary_colors = ["#525350", "#f15f5b", "#fce164", "#1c7ca1", "#71c3b4", "#fcf
 title_font = {"fontname": "Century Gothic"}
 text_font = {"fontname": "Arial"}
 
-def make_grouped_barplot(barlists, barlabels, save_path, chart_title):
-    """Make grouped barplot"""
+def make_grouped_barplot_v(barlists, barlabels, save_path, chart_title):
+    """Make vertical grouped barplot"""
     fig, ax = plt.subplots()
     width = (1 / len(barlists) / 1.6)
     for i, subbar in enumerate(barlists):
