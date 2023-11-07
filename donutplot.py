@@ -21,11 +21,14 @@ def make_donutplot(data, colors):
     if len(data) != len(colors):
         raise Exception("data and colors must be of same length!")
 
-def valuelabel_pie(sizes, labels, angles):
+def valuelabel_pie(sizes, labels):
     """Add valuelabels for circular pie chart"""
-    for i in range(len(sizes)):
+    cumulative_sizes = np.cumsum(sizes)
+    angles = [360 * size / sum(sizes) for size in cumulative_sizes]
+    
+    for i, j in enumerate(sizes):
         angle = angles[i]
         radian = angle * np.pi / 180
         x = 0.8 * np.cos(radian)
         y = 0.8 * np.sin(radian)
-        plt.text(x, y, labels[i], ha='center', va='center', size = 8, **text_font)
+        plt.text(x, y, labels[i], ha='center', va='center', size = 10, **text_font)
